@@ -1,0 +1,46 @@
+#border_pane {
+    -fx-background-color: #fff;
+}
+
+#menu_bar {
+    -fx-background-color: linear-gradient(#555 0%, #333 50%);
+    -fx-background-insets: 0,1,4,5,6;
+}
+
+#menu_bar .menu .label {
+    -fx-text-fill: #fff;
+}
+
+#menu_bar .menu-item .label {
+    -fx-text-fill: #222;
+}
+
+#tool_bar {
+    -fx-background-color: #eee;
+}
+
+#design_patterns_accordion {
+    -fx-background-color: #eee;
+}
+
+.button, .toggle-button {
+    -fx-background-color: rgba(200,200,200,0.5);
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: rgba(240,240,240,0.7);
+}
+
+.menu {
+    -fx-border-width: 0;
+}
+
+#split_pane {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+#status_bar {
+    -fx-background-color: #000; 
+    -fx-text-fill: #fff;
+}

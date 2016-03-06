@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800.0" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visualyzer.guirenderer.VisualyzerController">
+    <top>
+        <MenuBar fx:id="menu_bar" scaleZ="5.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="import_xml" mnemonicParsing="false" text="Import XML" onAction="#importXML" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="close_menu" mnemonicParsing="false" text="Close" onAction="#close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <CheckMenuItem fx:id="show_left_panel" mnemonicParsing="false" text="Left Panel" onAction="#toggleLeftPanel" />
+                        <CheckMenuItem fx:id="show_right_panel" mnemonicParsing="false" text="Right Panel" onAction="#toggleRightPanel" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="about_menu" mnemonicParsing="false" text="About..." onAction="#showAbout" />
+                    </items>
+                </Menu>
+            </menus>
+            <effect>
+                <DropShadow />
+            </effect>
+        </MenuBar>
+    </top>
+    <right></right>
+    <bottom></bottom>
+    <left></left>
+</BorderPane>
