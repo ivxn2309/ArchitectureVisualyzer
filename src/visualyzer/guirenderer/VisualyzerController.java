@@ -1,20 +1,30 @@
 package visualyzer.guirenderer;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 
-/**
- *
- * @author ivxn2
- */
 public class VisualyzerController implements Initializable {
+    
+    private FileChooser fileChooser;
+    ObservableList<String> data = FXCollections.observableArrayList(
+            "chocolate", "salmon", "gold", "coral", "darkorchid",
+            "darkgoldenrod", "lightsalmon", "black", "rosybrown", "blue",
+            "blueviolet", "brown");
+    
     @FXML
     private BorderPane border_pane;
     @FXML
@@ -29,22 +39,37 @@ public class VisualyzerController implements Initializable {
     private MenuItem about_menu;
     @FXML
     private MenuItem import_xml;
+    @FXML
+    private Label status_bar;
+    @FXML
+    private ToolBar tool_bar;
+    @FXML
+    private ListView<String> element_list;
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        fileChooser = new FileChooser();
+        show_left_panel.setSelected(true);
+        show_right_panel.setSelected(true);
+        
+        element_list.setItems(data);
     }    
 
     @FXML
     private void close(ActionEvent event) {
+        System.exit(0);
     }
 
     @FXML
     private void toggleLeftPanel(ActionEvent event) {
+        boolean show = show_left_panel.isSelected();
+        element_list.setVisible(show);
     }
 
     @FXML
     private void toggleRightPanel(ActionEvent event) {
+        boolean show = show_right_panel.isSelected();
+        tool_bar.setVisible(show);
     }
 
 
@@ -54,6 +79,8 @@ public class VisualyzerController implements Initializable {
 
     @FXML
     private void importXML(ActionEvent event) {
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("XML", "*.xml"));
+        File file = fileChooser.showOpenDialog(border_pane.getScene().getWindow());
     }
     
 }

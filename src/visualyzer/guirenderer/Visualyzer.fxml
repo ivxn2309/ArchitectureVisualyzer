@@ -11,6 +11,7 @@
 <?import javafx.geometry.*?>
 
 <BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800.0" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visualyzer.guirenderer.VisualyzerController">
+    
     <top>
         <MenuBar fx:id="menu_bar" scaleZ="5.0" BorderPane.alignment="CENTER">
             <menus>
@@ -41,7 +42,49 @@
             </effect>
         </MenuBar>
     </top>
-    <right></right>
-    <bottom></bottom>
-    <left></left>
+    
+    <right>
+        <ToolBar fx:id="tool_bar" orientation="VERTICAL" prefHeight="665.0" prefWidth="200.0" scaleShape="false" BorderPane.alignment="CENTER">
+            <items>
+                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="80.0" text="Settings" textAlignment="CENTER">
+                    <font>
+                        <Font name="Trebuchet MS" size="12.0" />
+                    </font>
+                </Label>
+                <VBox fx:id="view_selection_box">
+                    <fx:define>
+                        <ToggleGroup fx:id="view_selection"/>
+                    </fx:define>
+                    <children>
+                        <RadioButton text="N-Tier View" toggleGroup="$view_selection"/>
+                        <RadioButton text="View By Component" toggleGroup="$view_selection"/>
+                        <RadioButton text="Class Diagram" toggleGroup="$view_selection"/>
+                    </children>
+                </VBox>
+            </items>
+            <effect>
+                <DropShadow height="0.0" offsetX="-1.0" radius="4.75" />
+            </effect>
+        </ToolBar>
+    </right>
+    
+    <bottom>
+        <Label fx:id="status_bar" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" text="Ready." textFill="WHITE" BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets left="16.0" />
+            </padding>
+            <font>
+                <Font name="Trebuchet MS" size="12.0" />
+            </font>
+        </Label>
+    </bottom>
+    
+    <left>
+        <ListView fx:id="element_list" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <effect>
+                <DropShadow height="0.0" offsetX="1.0" radius="4.0" />
+            </effect>
+        </ListView>
+    </left>
+    
 </BorderPane>

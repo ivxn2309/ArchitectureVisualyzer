@@ -15,8 +15,21 @@
     -fx-text-fill: #222;
 }
 
+#element_list {
+    -fx-border-color: #000;
+}
+
 #tool_bar {
     -fx-background-color: #eee;
+}
+
+#view_selection_box {
+    -fx-background-color: #fff;
+    -fx-padding: 15 10 15 10;
+}
+
+#view_selection_box .radio-button {
+    -fx-padding: 2 0 2 0;
 }
 
 #design_patterns_accordion {
@@ -41,6 +54,6 @@
 }
 
 #status_bar {
-    -fx-background-color: #000; 
+    -fx-background-color: linear-gradient(#555 0%, #333 50%);
     -fx-text-fill: #fff;
 }
