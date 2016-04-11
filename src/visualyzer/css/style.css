@@ -49,8 +49,8 @@
     -fx-border-width: 0;
 }
 
-#split_pane {
-    -fx-background-color: rgba(0,0,0,0);
+#views_pane {
+    
 }
 
 #status_bar {
